@@ -18,7 +18,7 @@ pelicun\_2\_brightway2 is a library bridging asset performance assessment damage
 ## Coupling methodology
 
 
-![Coupling framework overview](./imgs/Coupling%20Framework.png)
+![Coupling framework overview](./imgs/Coupling%20framework.png)
 
 
 \### Add coupling framework methodology figure
