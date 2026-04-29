@@ -1,0 +1,10 @@
+Requirements : 
+1 - OpenSees version 3.6.0. 
+2 - WEUQ version 4.3.0
+3 - OpenSeespy version 3.6.0 (required to convert Tokyo Polytechnique University wind to a 2D file input). 
+
+
+
+Procedure : 
+1 - In the local install files of WEUQ (i.e. "...\WEUQ_software\applications\createEVENT\experimentalWindForces\") 
+	- Swap : convertWindMat.py & experimentalWindForces.py with the four files from 0 - Create2D wind event\Modifications files - WEUQ\ 

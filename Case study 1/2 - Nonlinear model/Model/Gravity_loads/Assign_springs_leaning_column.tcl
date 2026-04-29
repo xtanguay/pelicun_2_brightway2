@@ -1,0 +1,41 @@
+# This file will be used to define column hinges 
+
+rotLeaningCol	72722	72	722;	# Spring below floor level 2 
+rotLeaningCol	72524	72	724;	# Spring above floor level 2 
+rotLeaningCol	73732	73	732;	# Spring below floor level 3 
+rotLeaningCol	73534	73	734;	# Spring above floor level 3 
+rotLeaningCol	74742	74	742;	# Spring below floor level 4 
+rotLeaningCol	74544	74	744;	# Spring above floor level 4 
+rotLeaningCol	75752	75	752;	# Spring below floor level 5 
+rotLeaningCol	75554	75	754;	# Spring above floor level 5 
+rotLeaningCol	76762	76	762;	# Spring below floor level 6 
+rotLeaningCol	76564	76	764;	# Spring above floor level 6 
+rotLeaningCol	77772	77	772;	# Spring below floor level 7 
+rotLeaningCol	77574	77	774;	# Spring above floor level 7 
+rotLeaningCol	78782	78	782;	# Spring below floor level 8 
+rotLeaningCol	78584	78	784;	# Spring above floor level 8 
+rotLeaningCol	79792	79	792;	# Spring below floor level 9 
+rotLeaningCol	79594	79	794;	# Spring above floor level 9 
+rotLeaningCol	7107102	710	7102;	# Spring below floor level 10 
+rotLeaningCol	7105104	710	7104;	# Spring above floor level 10 
+rotLeaningCol	7117112	711	7112;	# Spring below floor level 11 
+rotLeaningCol	7115114	711	7114;	# Spring above floor level 11 
+rotLeaningCol	7127122	712	7122;	# Spring below floor level 12 
+rotLeaningCol	7125124	712	7124;	# Spring above floor level 12 
+rotLeaningCol	7137132	713	7132;	# Spring below floor level 13 
+rotLeaningCol	7135134	713	7134;	# Spring above floor level 13 
+rotLeaningCol	7147142	714	7142;	# Spring below floor level 14 
+rotLeaningCol	7145144	714	7144;	# Spring above floor level 14 
+rotLeaningCol	7157152	715	7152;	# Spring below floor level 15 
+rotLeaningCol	7155154	715	7154;	# Spring above floor level 15 
+rotLeaningCol	7167162	716	7162;	# Spring below floor level 16 
+rotLeaningCol	7165164	716	7164;	# Spring above floor level 16 
+rotLeaningCol	7177172	717	7172;	# Spring below floor level 17 
+rotLeaningCol	7175174	717	7174;	# Spring above floor level 17 
+rotLeaningCol	7187182	718	7182;	# Spring below floor level 18 
+rotLeaningCol	7185184	718	7184;	# Spring above floor level 18 
+rotLeaningCol	7197192	719	7192;	# Spring below floor level 19 
+rotLeaningCol	7195194	719	7194;	# Spring above floor level 19 
+rotLeaningCol	7207202	720	7202;	# Spring below floor level 20 
+
+# puts "Leaning column springs defined"

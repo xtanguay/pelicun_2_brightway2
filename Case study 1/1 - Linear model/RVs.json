@@ -1,0 +1,64 @@
+{
+    "randomVariables": [
+        {
+            "distribution": "Lognormal",
+            "inputType": "Moments",
+            "mean": 0.01,
+            "name": "dmping",
+            "refCount": 1,
+            "stdDev": 0.0005,
+            "value": "RV.dmping",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Lognormal",
+            "inputType": "Moments",
+            "mean": 1518.75,
+            "name": "Drfmass",
+            "refCount": 1,
+            "stdDev": 75.9375,
+            "value": "RV.Drfmass",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Lognormal",
+            "inputType": "Moments",
+            "mean": 1125,
+            "name": "Dintrmass",
+            "refCount": 1,
+            "stdDev": 56.25,
+            "value": "RV.Dintrmass",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Lognormal",
+            "inputType": "Moments",
+            "mean": 450,
+            "name": "Lrfmass",
+            "refCount": 1,
+            "stdDev": 22.5,
+            "value": "RV.Lrfmass",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Lognormal",
+            "inputType": "Moments",
+            "mean": 1125,
+            "name": "Lintrmass",
+            "refCount": 1,
+            "stdDev": 56.25,
+            "value": "RV.Lintrmass",
+            "variableClass": "Uncertain"
+        },
+        {
+            "distribution": "Lognormal",
+            "inputType": "Moments",
+            "mean": 29000,
+            "name": "Ymod",
+            "refCount": 1,
+            "stdDev": 1450,
+            "value": "RV.Ymod",
+            "variableClass": "Uncertain"
+        }
+    ]
+}
