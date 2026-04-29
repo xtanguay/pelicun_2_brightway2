@@ -1,4 +1,4 @@
-\# pelicun\_2\_brightway2
+# pelicun\_2\_brightway2
 
 
 
@@ -10,7 +10,7 @@ pelicun\_2\_brightway2 is a library bridging asset performance assessment damage
 
 
 
-\## Repository layout
+## Repository layout
 
 
 
