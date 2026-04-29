@@ -35,7 +35,7 @@ For each hazard intensity level, the last two steps are repeated, creating the f
 
 
 
-![Database relationship](./imgs/Database%20 relationship.png)
+![Database relationship](./imgs/Database%20relationship.png)
 
 
 
