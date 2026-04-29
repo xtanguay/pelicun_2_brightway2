@@ -21,17 +21,13 @@ pelicun\_2\_brightway2 is a library bridging asset performance assessment damage
 ![Coupling framework overview](./imgs/Coupling%20framework.png)
 
 
-\### Add coupling framework methodology figure
-
-
-
 The coupling framework hinges on five essential steps :
 
-* Unique damage states are identified and sent to a brightway2 database of generic losses (the same archetype or building component may be reused several times in the assessment).
-* For each unique damage state, intermediate and elementary flows are added, based on a bill of materials and an identification of relevant processes. Commercial databases, such as ecoinvent, can assist in developing comprehensive life cycle inventories.
-* A database of pre-aggregated and dependently sampled datasets is created from the database of generic lossses. The results of the pre-aggregation are stored in the form of randomly presampled arrays.
-* A foreground loss database is added to pair individual damage inputs with the pre-aggregated generic losses. The damage quantities are stored in the form of a sequential presampled array.
-* A reference flow dataset is added to enable a single demand vector to consistently represent the full combination of underlying damages states activated by individual simulation samples.
+1. Unique damage states are identified and sent to a brightway2 database of generic losses (the same archetype or building component may be reused several times in the assessment).
+2. For each unique damage state, intermediate and elementary flows are added, based on a bill of materials and an identification of relevant processes. Commercial databases, such as ecoinvent, can assist in developing comprehensive life cycle inventories.
+3. A database of pre-aggregated and dependently sampled datasets is created from the database of generic lossses. The results of the pre-aggregation are stored in the form of randomly presampled arrays.
+4. A foreground loss database is added to pair individual damage inputs with the pre-aggregated generic losses. The damage quantities are stored in the form of a sequential presampled array.
+5. A reference flow dataset is added to enable a single demand vector to consistently represent the full combination of underlying damages states activated by individual simulation samples.
 
 
 
@@ -39,7 +35,7 @@ For each hazard intensity level, the last two steps are repeated, creating the f
 
 
 
-\### Brightway2 implementation and database relationship figure
+![Database relationship](./imgs/Database%20 relationship.png)
 
 
 
