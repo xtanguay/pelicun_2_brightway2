@@ -1,7 +1,7 @@
 # A coupling framework between asset performance assessment and LCA
 
 
-pelicun\_2\_brightway2 is a library bridging asset performance assessment damage outputs to environmental life cycle assessment. A paper (currently under review) introduces key elements of the coupling framework.
+pelicun\_2\_brightway2 is a library bridging asset performance assessment damage outputs with environmental life cycle assessment. The library connects *pelicun* and the *brightway2*. A paper (currently under review) introduces key elements of the coupling framework.
 
 
 ## Repository layout
