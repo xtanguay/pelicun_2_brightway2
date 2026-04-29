@@ -64,3 +64,10 @@ From a matrix implementation perspective, the coupling framework takes the follo
 
 A first-tier contribution analysis procedure is further detailed in the supplementary information of the paper.
 
+
+# Citation 
+
+Tanguay,X., Amor, B., 2026. (manuscript in preparation) Natural hazard risks in LCA for the built environment: a framework reconciling stochastic inputs with stochastic process-based LCA.
+
+
+
