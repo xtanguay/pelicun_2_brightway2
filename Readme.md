@@ -52,7 +52,7 @@ Upon first realization (of step 1), the pelicun_2_brightway2 library will reques
 From a matrix implementation perspective, the coupling framework takes the following three essential steps :
 
 
-## Matrix layout figure
+![Computational implementation](./imgs/Matrices.png)
 
 
 
