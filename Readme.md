@@ -1,7 +1,7 @@
 # A coupling framework between asset performance assessment and LCA
 
 
-pelicun\_2\_brightway2 is a library bridging asset performance assessment damage outputs with environmental life cycle assessment. The library connects *pelicun* and the *brightway2*. A paper (currently under review) introduces key elements of the coupling framework.
+pelicun\_2\_brightway2 is a library bridging asset performance assessment damage outputs with environmental life cycle assessment. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html). A paper (currently under review) introduces key elements of the coupling framework.
 
 
 ## Repository layout
@@ -20,6 +20,7 @@ pelicun\_2\_brightway2 is a library bridging asset performance assessment damage
 
 ![Coupling framework overview](./imgs/Coupling%20framework.png)
 
+### General methodology
 
 The coupling framework hinges on five essential steps :
 
@@ -31,8 +32,13 @@ The coupling framework hinges on five essential steps :
 
 
 
-For each hazard intensity level, the last two steps are repeated, creating the following database relationship within the brightway2 project:
 
+### Brightway2 implementation 
+
+
+
+
+For each hazard intensity level, the last two steps are repeated, creating the following database relationship within the brightway2 project:
 
 
 ![Database relationship](./imgs/Database%20relationship.png)
