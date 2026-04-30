@@ -11,13 +11,13 @@ The files associated with case study 1 (component-based assessment) enable to re
 
 ## Recreating the structural model outputs:
 If the focus is towards recreating the structural model simulation outputs, the additional software requirements are as follows: 
-1 - OpenSees version 3.6.0. 
-2 - WEUQ version 4.3.0
-3 - OpenSeespy version 3.6.0 (required to convert Tokyo Polytechnique University wind to a 2D file input). 
+
+1. OpenSees version 3.6.0. 
+2. WEUQ version 4.3.0
+3. OpenSeespy version 3.6.0 (required to convert Tokyo Polytechnique University wind to a 2D file input). 
 
 Furthermore, the WEUQ software is modified as follows:
-* In the local install files of WEUQ (i.e. "...\WEUQ_software\applications\createEVENT\experimentalWindForces\") 
-	Swap : convertWindMat.py & experimentalWindForces.py with the four files from 0 - Create2D wind event\Modifications files - WEUQ\ 
+* In the local install files of WEUQ (i.e. "...\WEUQ_software\applications\createEVENT\experimentalWindForces\") swap : convertWindMat.py & experimentalWindForces.py with the four files from "0 - Create2D wind event\Modifications files - WEUQ\" 
 
 The files within folder *0 - Create 2D wind event* are leveraged to process Tokyo Polytechnique University wind tunnel data into a 2D file event compatible with WEUQ. The WEUQ software is then leveraged to run the linear model (see folder : 1 - Linear model) or the nonlinear model (see folder : 2 - Nonlinear model). The outputs of WEUQ (and the collapse results in the case of the nonlinear model) are to be set aside in order to create a database of engineering demand parameters. In deriving results for case study 1, 1000 simulations are performed for each wind speed. 
 
