@@ -10,3 +10,7 @@ Note that several of the libraries cited are forks of the originals, although th
 
 See the following link for embedded forks : [github submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
+
+
+Also : add a readme.md to all other major folders to explain how to use them.
+

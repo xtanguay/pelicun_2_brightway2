@@ -1,7 +1,9 @@
 # A coupling framework between asset performance assessment and LCA
 
 
-pelicun\_2\_brightway2 is a library bridging asset performance assessment damage outputs with environmental life cycle assessment. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
+
+pelicun\_2\_brightway2 is a library bridging *asset performance assessment* <ins>damage outputs<\\ins> with *environmental life cycle assessment*. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
+
 
 
 ## Repository layout
@@ -18,7 +20,8 @@ pelicun\_2\_brightway2 is a library bridging asset performance assessment damage
 ## Coupling methodology
 
 
-![Coupling framework overview](./imgs/Coupling%20framework.png)
+
+!\[Coupling framework overview](./imgs/Coupling%20framework.png)
 
 ### General methodology
 
@@ -31,18 +34,21 @@ The coupling framework hinges on five essential steps :
 5. A reference flow dataset is added to enable a single demand vector to consistently represent the full combination of underlying damages states activated by individual simulation samples.
 
 
+
 ### Software implementation
 
-Within the Brightway2 project, the recommended baseline databases are as follows: 
+Within the Brightway2 project, the recommended baseline databases are as follows:
 
-1. A biosphere database 
+1. A biosphere database
 2. A secondary background database (a technosphere database)
 3. A refined background database (to improve data coverage)
 
-Upon first realization (of step 1), the pelicun_2_brightway2 library will request to automatically create the generic loss database (for which the user shall provide a name). After manual linking in step 2, Monte Carlo simulations are performed to populate arrays of pre-aggregated and dependently sampled generic loss datasets. Unit impact categories are  automatically added as elementary flows in the biosphere database for the selected LCIA indicators. A pre-aggregated generic loss database is created to tie generic loss datasets with unit impact category indicators. Provided a time-based assessment is performed, repeating step 4 and 5 of the framework will create new foreground loss databases for each intensity level. Overall, this leads to the following database relationship within the brightway2 project:
+Upon first realization (of step 1), the pelicun\_2\_brightway2 library will request to automatically create the generic loss database (for which the user shall provide a name). After manual linking in step 2, Monte Carlo simulations are performed to populate arrays of pre-aggregated and dependently sampled generic loss datasets. Unit impact categories are  automatically added as elementary flows in the biosphere database for the selected LCIA indicators. A pre-aggregated generic loss database is created to tie generic loss datasets with unit impact category indicators. Provided a time-based assessment is performed, repeating step 4 and 5 of the framework will create new foreground loss databases for each intensity level. Overall, this leads to the following database relationship within the brightway2 project:
 
 
-![Database relationship](./imgs/Database%20relationship.png)
+
+!\[Database relationship](./imgs/Database%20relationship.png)
+
 
 
 
@@ -52,7 +58,8 @@ Upon first realization (of step 1), the pelicun_2_brightway2 library will reques
 From a matrix implementation perspective, the coupling framework takes the following three essential steps :
 
 
-![Computational implementation](./imgs/Matrices.png)
+
+!\[Computational implementation](./imgs/Matrices.png)
 
 
 
@@ -65,9 +72,8 @@ From a matrix implementation perspective, the coupling framework takes the follo
 A first-tier contribution analysis procedure is further detailed in the supplementary information of the paper.
 
 
-# Citation 
+
+# Citation
 
 Tanguay,X., Amor, B., 2026. (manuscript in preparation) Natural hazard risks in LCA for the built environment: a framework reconciling stochastic inputs with stochastic process-based LCA.
-
-
 
