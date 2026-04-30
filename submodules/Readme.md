@@ -14,3 +14,23 @@ See the following link for embedded forks : [github submodules](https://git-scm.
 
 Also : add a readme.md to all other major folders to explain how to use them.
 
+
+
+
+
+Recommendations on virtual environment set up : 
+
+\- Python version : 3.11.4
+
+\- pelicun version :  3.2b2
+
+\- Brightway2 version : 2.4.3
+
+\- pandas version : 2.0.0
+
+\- numpy version : 1.25.2
+
+\- Scipy version : 1.11.2
+
+
+

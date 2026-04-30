@@ -1,0 +1,3 @@
+[submodule "submodules/bw2agg"]
+	path = submodules/bw2agg
+	url = https://github.com/xtanguay/bw2agg.git
