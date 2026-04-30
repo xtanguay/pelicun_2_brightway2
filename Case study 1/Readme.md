@@ -1,6 +1,6 @@
 # Overview
 
-The files associated with case study 1 (component-based assessment) enable to recreate from scratch the assessment for the 19 story steel moment frame building. Notebooks C to E focus exclusively on using pelicun_2_bw2. Essential files are provided for this purpose : 
+The files associated with case study 1 (component-based assessment) enable to recreate from scratch the assessment for the 19 story steel moment resisting frame building. Notebooks C to E focus exclusively on using pelicun_2_bw2. Essential files are provided for this purpose : 
 
 1. Relevant wind speeds.xlsx contains the hazard curve details. 
 2. building_EDPs.xlsx and building_EDPs_correlations.xlsx contains the engineering demand parameters.
