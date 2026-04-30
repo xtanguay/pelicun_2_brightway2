@@ -77,8 +77,6 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 
 * Python version : 3.11.4
 
-* pelicun version :  3.2b2
-
 * Brightway2 version : 2.4.3
 
 * pandas version : 2.0.0
@@ -87,6 +85,8 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 
 * Scipy version : 1.11.2
 
+>[!CAUTION]
+> pelicun_2_brightway2 should be installed with the libraries indicated within the submodules folders. 
 
 
 # Citation
