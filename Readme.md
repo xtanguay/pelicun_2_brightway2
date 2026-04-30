@@ -68,7 +68,7 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 
 
 * Libraries folder : contains all core libraries required in order to operate the pelicun\_2\_bw2 functions. It should be noted that several of the libraries are forks of the main project branches, as minor edits have been implemented in most of them.
-* Hazard analysis : hurrSim is a hurricane hazard curve simulator for the Atlantic basin and it is provided in support of the publication. The folder contains the hurrSim library to simulate hurricane tracks, along with notebooks (notebooks A to C) to operate the library, notably in generating a database of hurricanes, along with means to derive statistics for selected coordinates.
+* Hazard analysis : hurrSim is a hurricane hazard curve simulator for the Atlantic basin and it is provided in support of the publication. The folder contains the hurrSim library to simulate hurricane tracks, along with notebooks (notebooks A to C) to operate the library, notably in generating a database of hurricanes and means to derive statistics for selected coordinates.
 * Case study 1 : The first case study is provided with the relevant files to run the notebooks A through E directly. Folders 0 through 2 are provided to recreate core engineering demand parameters (from wind tunnel pressure scaling to collapse simulation).
 * Case study 2 : The second case study is provided with the relevant files to run the notebooks A through E directly. It should be mentionned that building coordinates (latitude/longitude) are intentionally scrambled to prevent user from pinpointing the exact buildings in the original case study.
 
