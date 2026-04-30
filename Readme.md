@@ -2,7 +2,7 @@
 
 
 
-pelicun\_2\_brightway2 is a library bridging **asset performance assessment** <ins>damage outputs<ins> with **environmental life cycle assessment**. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
+pelicun\_2\_brightway2 is a library bridging **asset performance assessment** <ins>damage outputs</ins> with **environmental life cycle assessment**. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
 
 
 
@@ -21,7 +21,7 @@ pelicun\_2\_brightway2 is a library bridging **asset performance assessment** <i
 
 
 
-!\[Coupling framework overview](./imgs/Coupling%20framework.png)
+![Coupling framework overview](./imgs/Coupling%20framework.png)
 
 ### General methodology
 
@@ -47,7 +47,7 @@ Upon first realization (of step 1), the pelicun\_2\_brightway2 library will requ
 
 
 
-!\[Database relationship](./imgs/Database%20relationship.png)
+![Database relationship](./imgs/Database%20relationship.png)
 
 
 
@@ -59,7 +59,7 @@ From a matrix implementation perspective, the coupling framework takes the follo
 
 
 
-!\[Computational implementation](./imgs/Matrices.png)
+![Computational implementation](./imgs/Matrices.png)
 
 
 
