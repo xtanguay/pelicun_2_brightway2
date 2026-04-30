@@ -1,3 +1,12 @@
 [submodule "submodules/bw2agg"]
 	path = submodules/bw2agg
 	url = https://github.com/xtanguay/bw2agg.git
+[submodule "submodules/database_wide_monte_carlo"]
+	path = submodules/database_wide_monte_carlo
+	url = https://github.com/xtanguay/database_wide_monte_carlo.git
+[submodule "submodules/presamples"]
+	path = submodules/presamples
+	url = https://github.com/xtanguay/presamples.git
+[submodule "submodules/pelicun"]
+	path = submodules/pelicun
+	url = https://github.com/xtanguay/pelicun.git
