@@ -2,7 +2,7 @@
 
 
 
-pelicun\_2\_brightway2 is a library bridging *asset performance assessment* <ins>damage outputs<\\ins> with *environmental life cycle assessment*. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
+pelicun\_2\_brightway2 is a library bridging *asset performance assessment* <ins>damage outputs<\ins> with *environmental life cycle assessment*. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
 
 
 
