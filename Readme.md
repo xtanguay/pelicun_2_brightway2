@@ -72,6 +72,20 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 * Case study 1 : The first case study is provided with the relevant files to run the notebooks A through E directly. Folders 0 through 2 are provided to recreate core engineering demand parameters (from wind tunnel pressure scaling to collapse simulation).
 * Case study 2 : The second case study is provided with the relevant files to run the notebooks A through E directly. It should be mentionned that building coordinates (latitude/longitude) are intentionally scrambled to prevent user from pinpointing the exact buildings in the original case study.
 
+# Recommended environment setup : 
+
+
+* Python version : 3.11.4
+
+* pelicun version :  3.2b2
+
+* Brightway2 version : 2.4.3
+
+* pandas version : 2.0.0
+
+* numpy version : 1.25.2
+
+* Scipy version : 1.11.2
 
 
 
