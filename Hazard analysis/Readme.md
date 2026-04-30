@@ -8,7 +8,7 @@ This folder contains the relevant files to generate a database of hurricane trac
 
 ## hurrSim - data generators
 
-Relevant notebooks and input datasets are supplied to reproduce the development of hurricane track parameters.    
+Relevant notebooks and input datasets are supplied to reproduce the development of hurricane track parameters. The notebooks are labelled A to I, as they are meant to run in series, generating and modifying the relevant files as they become available in the process.    
 
 
  
