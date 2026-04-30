@@ -8,6 +8,10 @@ The files associated with case study 1 (component-based assessment) enable to re
 4. Inventory Building to P2B.xlsx describes the life-cycle inventory to implement in brightway2.
 5. selected_LCIA_methods.xlsx indicates the selected LCIA indicators for this assessment. Note that Impact World+ LCIA indicators are not typically pre-loaded with an ecoinvent biosphere, thus it is necessary to pre-load it beforehand (see [ImpactWorld+](https://zenodo.org/records/18892673)'s download page). This file should be inserted under "path_to_pre_sampled_MC_simulations/database_name/results/reference_files".  
 
+* Notebook C: Generates the asset performance assessment. 
+* Notebook D: Post-processes the results to the integrated heatmap and histogram results.
+* Notebook E: Post-processes the results to expected annual loss curves. 
+
 
 ## Recreating the structural model outputs:
 If the focus is towards recreating the structural model simulation outputs, the additional software requirements are as follows: 
