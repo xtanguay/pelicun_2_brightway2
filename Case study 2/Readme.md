@@ -18,7 +18,7 @@ The following ancilliary files are provided to help recreate part of the results
 
 
 
-[!WARNING]
+>[!WARNING]
 >It should be noted that the exact coordinates defining the boundaries to the case study area have been intentionally removed from the scripts to prevent research data to be used beyond their intended purpose of demonstrating the use of pelicun\_2\_brightway2. Case study building coordinates are also intentionally removed for the same purpose. 
 
 
