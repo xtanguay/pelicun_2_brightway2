@@ -10,4 +10,4 @@ build-backend = "setuptools.build_meta"
 include-package-data = false
 
 [tool.setuptools.packages.find]
-exclude = ["tests*", "docs*", "ignore_folder*"]  # Folders to ignore
+exclude = ["Case study*", "imgs*", "submodules*","Hazard analysis"]  # Folders to ignore
