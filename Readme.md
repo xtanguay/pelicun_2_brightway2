@@ -91,5 +91,5 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 
 # Citation
 
-Tanguay, X., Amor, B., 2026. (manuscript in preparation) Natural hazard risks in LCA for the built environment: a framework reconciling stochastic inputs with stochastic process-based LCA.
+Tanguay, X., Amor, B., 2026. (manuscript in preparation) Natural hazard risks in LCA for the built environment: a framework managing stochastic inputs in stochastic process-based LCA.
 
