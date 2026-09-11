@@ -9,6 +9,7 @@ Created on Wed Dec 21 09:10:25 2022
 import numpy as np
 import pandas as pd
 from time import time
+import scipy
 
 # LCA libraries
 import brightway2 as bw
