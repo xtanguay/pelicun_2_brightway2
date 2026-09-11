@@ -86,16 +86,22 @@ class LCA_setup :
     def bw2_launch(name) :
         """
         Function to set the project and import the biosphere flows and LCIA methods all at once.
+        
         """
         
         bw.projects.set_current(name) 
-        bw.projects.current
+
     
         # Getting the biosphere matrix :
         
-        bw.bw2setup()  # This will take some time 
+        #bw.bw2setup()  # This will take some time 
                    # This will also generate the LCIA methods
         biosphere = bw.Database('biosphere3') # This will generate a variable that will hold the database itself.
+
+
+        if (len(biosphere)< 1) or (len(bw.methods) < 1) : 
+            print('Warning : The underlying bw2setup function is deprecated. Please set up project according to latest brightway2 recommandations on elementary flow and LCIA method import methods.')
+              
         print(f'The number of flows in the biosphere database is : {len(biosphere)}.')
         
         
@@ -253,24 +259,12 @@ class LCA_setup :
         loss_map : mapping between damages and availalable losses (some damages may not yield direct correlation with losses). 
         """
         
-        # 1st, check that a damage assessment result is available (off PELICUN's results)
-        #if PAL.damage.sample is None : 
-        #    raise ValueError('A damage sample must first be acquired in order to link data with quantities.')
-            
-        #dmg_data = PBD_setup.clean_dmg_df(PAL)
-    
+
         # Get damage assessment results. 
         ds_states = (dmg_data.columns.to_series())
     
-        
-        #log_ds = np.log(PAL.damage.sample)
-        #log_ds_states_means = np.mean(log_ds,axis = 0)
-        #log_ds_states_std = np.nanstd(log_ds, axis = 0)
-        #log_ds_states_medians = log_ds.median()
-        
+
         ds_states_means = dmg_data.mean()
-        #ds_states_medians = PAL.damage.sample.median()
-        #ds_states_std = PAL.damage.sample.std()
         ds_with_repairs =[pair for pair in zip(ds_states,ds_states_means) if int(pair[0][3])!=0]
     
     
@@ -348,11 +342,6 @@ class LCA_setup :
         """
 
         
-        # 1st, check that a damage assessment result is available (off PELICUN's results)
-        #if PAL.damage.sample is None : 
-        #    raise ValueError('A damage sample must first be acquired in order to link samples.')
-            
-        #dmg_data = PBD_setup.clean_dmg_df(PAL)
         dmg_array = np.array(dmg_data.T)
         
         ds_states = dmg_data.columns.to_series()
@@ -407,7 +396,7 @@ class Presample_LCA_calculations :
         # mc.presamples.update_matrices(advance_indices = False)
     
         """
-        # Estimate : m = 1000 runs (n = 1) equals to 3.6 minutes of computing for 1 indicator.
+
         res = []
         start = time()
         for _ in range(m) : 
@@ -434,216 +423,8 @@ class Presample_LCA_calculations :
         # Useful function to "reset" progression within the presample inner indexes :
         #mc.presamples.reset_sequential_indices()
     
-    def get_C_matrices(demand, list_of_methods):
-        """ Return a dict with {method tuple:cf_matrix} for a list of methods
-        Uses a "sacrificial LCA" with exactly the same demand as will be used
-        in the MonteCarloLCA
-        """
-        C_matrices = {}
-        sacrificial_LCA = bw.LCA(demand)
-        sacrificial_LCA.lci()
-        for method in list_of_methods:
-            sacrificial_LCA.switch_method(method)
-            C_matrices[method] = sacrificial_LCA.characterization_matrix
-        return C_matrices
-
-    def trace_dependent_db(database_name) : 
-        """
-        Iterate through a database to identify all possible database dependencies
-        
-        ## Note : if dependencies are not up to date, run a sacrificial LCA first (force update)
-        
-        """
-        
-        # Make a shallow copy from the 1st layer of dependent databases 
-        master_list = list(bw.Database(database_name).metadata['depends'])
-        
-        # Initiate storage variables
-        updated_depends = []
-        
-        # Initial differences :  
-        diff_depends = len(master_list)-len(updated_depends)
-        
-        # Check all list elements for their own dependent databases :    
-        while diff_depends > 0 : 
-            
-            # Shallow copy of the up to date master list : 
-            updated_depends = list(master_list) 
-            
-            for db in master_list : 
-                # Find closest dependents
-                dependent_db = bw.Database(db).metadata['depends']
-                
-                # Add to the copy of the master list
-                updated_depends.extend(dependent_db)
-
-                # Clear duplicates
-            updated_depends = list(set(updated_depends)) # Clear databases flagged already
-            
-            # Check if this iteration yields any change : 
-            diff_depends = len([x for x in updated_depends if x not in master_list])
-        
-            master_list = updated_depends
-            
-        return master_list
-
-    def col_IDs_to_names(database_name,biosphere = 'biosphere3') : 
-        """
-        Inputs:
-        database_name : the name of the database which was used to generate LCA results (database of the reference flow)
-        
-        Outputs:
-        Yields a dictionnary of Activity IDs as keys and legible Activity names as values. 
-        """
-     
-        
-        # Find dependents 
-        dependents = trace_dependent_db(database_name)
-        # Remove the biosphere from the list (not activities per say)
-        dependents = [db for db in dependents if db != 'biosphere3']
-        
-        # Generate a sacrificial LCA to build indices : 
-        sacrificial_LCA = bw.LCA({bw.Database(database_name).random():1})
-        sacrificial_LCA.lci()
-        
-        
-        # Map Activities : 
-        #--------------------------------------------------------------------
-        # Initiate a storage variable
-        all_unique_activities_and_their_keys = defaultdict(list)
-        
-        # Start iterating to link datasets with IDs : 
-        for db in dependents :
-            for activity in bw.Database(db) : 
-                if activity.key in sacrificial_LCA.activity_dict:
-                    all_unique_activities_and_their_keys[f"{activity['reference product']},{activity['name']},{activity['location']}"].append(activity.key)
-            
-        # get a dictionnary of the IDs for all activities: 
-        all_unique_columns_and_their_activities = {
-            sacrificial_LCA.activity_dict[key[0]] : name 
-            for name,key in all_unique_activities_and_their_keys.items()   
-        }
-            
-        return(all_unique_columns_and_their_activities)
-
-    def standardize_technosphere(mc_ps) : 
-        """
-        Disaggregation functions    
-        """
-        
-        # Find total demand for aggregated datasets
-        row_sums = mc_ps.technosphere_matrix.sum(axis=1)*(-1) # include a sign flip 
-        # Row sums = 0 indicate the dataset is only an intermediate one (+1 on diagonal, -1 when consummed by another = 0)
-        #reduced_sums = row_sums[np.nonzero(row_sums)]
-        # Use the A/B LCA matrix format to isolate only the preaggregated datasets :
-        reduced_sums = row_sums[np.nonzero(mc_ps.biosphere_matrix.sum(axis=0))[1]].T
-        
-        # Row sums = -1 indicate a non-triggered damage (+1 accounts for technosphere format of "1" as activity output) 
-        filtered_sums = reduced_sums[:,np.where(reduced_sums!=-1)[1]]+1
-
-        # Reduce the technosphere to match the row size of reduced_sum
-        reduced_results = mc_ps.technosphere_matrix[np.nonzero(mc_ps.biosphere_matrix.sum(axis=0))[1],:]
-        
-        # Match the filtered sums row size
-        filtered_results = reduced_results[np.where(reduced_sums!=-1)[1],:]
-
-        # Standardize results relative to the total sum :
-        sums_CSR_format = scipy.sparse.diags(1/filtered_sums.A.ravel())*(-1)
-        standardized_technosphere = (sums_CSR_format @ filtered_results)
-
-        # Remove production quantity columns
-        standardized_technosphere.data[np.where(standardized_technosphere.data < 0)] = 0
-        standardized_technosphere.eliminate_zeros()
-        return standardized_technosphere
-
-    def technosphere_col_IDs_to_act_name(LCA_obj,dependents):
-        # Map Activities : 
-        #--------------------------------------------------------------------
-        # Initiate a storage variable
-        all_unique_activities_and_their_keys = defaultdict(list)
-
-        # Start iterating to link datasets with IDs : 
-        for db in dependents :
-            for activity in bw.Database(db) : 
-                if activity.key in LCA_obj.activity_dict:
-                    all_unique_activities_and_their_keys[(f"{activity['reference product']}")].append(activity.key)
-
-        # get the columns for all elementary processes : 
-        all_unique_columns_and_their_activities = {
-            LCA_obj.activity_dict[key[0]] : name 
-            for name,key in all_unique_activities_and_their_keys.items() 
-        }    
-     
-        return all_unique_columns_and_their_activities
-
-    def deaggregate_results(standardized_technosphere, a_score) : 
-        # Disaggregate results according to component ID
-        deaggregated_results = (a_score @ standardized_technosphere)
     
-        return deaggregated_results
-    
-class SDF_LCA_calculations : 
-    def create_SDF(db_name1,db_name2,PAL,loss_map,dmg_array):
-        """
-        Function which generates a Scenario difference dataframe (can then be exported to excel to run with the Activity-browser).
-        Similar to the presamples library, very fast for regular LCA calculations, not as functional for Monte Carlo runs. 
-        """
-    
-        # 1st, check that a damage assessment result is available (off PELICUN's results)
-        if PAL.damage.sample is None : 
-            raise ValueError('A damage sample must first be acquired in order to link samples.')
-            
-        dmg_data = PBD_setup.clean_dmg_df(PAL)
-        ds_states = dmg_data.columns.to_series()
-        dmg_indices = []
-        for dataset in ds_states :          
-            dataset_name =  f'{dataset[0]}-Story {dataset[1]}-dir {dataset[2]}-DS{dataset[3]}'    
-            mapped_ds = loss_map.loc[f'DMG-{dataset[0]}',loss_map.columns[0]]
-            indice = ((db_name2, mapped_ds+f' DS{dataset[3]}'),(db_name1,dataset_name),'technosphere')
-            dmg_indices.append(indice)
-        
-        dmg_matrix_data = pd.DataFrame(dmg_array, dmg_indices)
-        dmg_matrix_data.columns = ['S_' + str(col) for col in dmg_matrix_data.columns]    
-        
-        #from
-        act_name = []
-        ref_prod = []
-        loc1 = []
-        database1 = []
-    
-        #to
-        act_name2 = []
-        ref_prod2 = []
-        loc2 = []
-        database2 = []
-    
-        for row in dmg_matrix_data.index :
-            database1.append(row[0][0])
-            act_name.append(bw.Database(row[0][0]).get(row[0][1])['name'])
-            ref_prod.append(bw.Database(row[0][0]).get(row[0][1])['reference product'])
-            loc1.append(bw.Database(row[0][0]).get(row[0][1])['location'])
-        
-            database2.append(row[1][0])
-            act_name2.append(bw.Database(row[1][0]).get(row[1][1])['name'])
-            ref_prod2.append(bw.Database(row[1][0]).get(row[1][1])['reference product'])
-            loc2.append(bw.Database(row[1][0]).get(row[1][1])['location'])
-    
-    
-        dmg_matrix_data.insert(0,'from activity name',act_name)
-        dmg_matrix_data.insert(1,'from reference product',ref_prod)
-        dmg_matrix_data.insert(2,'from location',loc1)
-        dmg_matrix_data.insert(3,'from categories',pd.Series(dtype = 'string'))
-        dmg_matrix_data.insert(4,'from database',database1)
-        dmg_matrix_data.insert(5,'from key',pd.Series(dtype = 'string'))
-        dmg_matrix_data.insert(6,'to activity name',act_name2)
-        dmg_matrix_data.insert(7,'to reference product',ref_prod2)
-        dmg_matrix_data.insert(8,'to location',loc2)
-        dmg_matrix_data.insert(9,'to categories',pd.Series(dtype='string'))
-        dmg_matrix_data.insert(10,'to database',database2)
-        dmg_matrix_data.insert(11,'to key',pd.Series(dtype = 'string'))
-        dmg_matrix_data.insert(12,'flow type','technosphere')
-        
-        return dmg_matrix_data   
+ 
     
 
            
