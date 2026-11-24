@@ -2,6 +2,12 @@
 name="pelicun_2_bw2"
 version="0.0.1"
 
+[dependencies]
+"brightway2==2.4.7", # also worked with bw2== 2.4.3
+"pandas==2.0.0",
+"scipy==1.11.2",
+"numpy==1.26.4",
+
 [build-system]
 requires = ["setuptools>=45", "wheel"]
 build-backend = "setuptools.build_meta"
@@ -11,3 +17,4 @@ include-package-data = false
 
 [tool.setuptools.packages.find]
 exclude = ["Case study*", "imgs*", "submodules*","Hazard analysis"]  # Folders to ignore
+

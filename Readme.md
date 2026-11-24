@@ -2,7 +2,7 @@
 
 
 
-pelicun\_2\_brightway2 is a library bridging **asset performance assessment** damage outputs with **environmental life cycle assessment**. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper (currently under review) introduces key elements of the coupling framework.
+pelicun\_2\_brightway2 is a library bridging **asset performance assessment** damage outputs with **environmental life cycle assessment**. The library connects [pelicun](https://simcenter.designsafe-ci.org/products/backend-components/pelicun/) and [brightway2](https://docs.brightway.dev/en/legacy/index.html) to provide fast stochastic LCA simulations when LCA is part of a series of stochastic analyses. A paper introduces key elements of the coupling framework.
 
 
 
@@ -77,13 +77,15 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 
 * Python version : 3.11.4
 
-* Brightway2 version : 2.4.3
+* Brightway2 version : 2.4.7
 
 * pandas version : 2.0.0
 
-* numpy version : 1.25.2
+* numpy version : 1.26.4
 
 * Scipy version : 1.11.2
+
+* pypardiso is also highly recommended to increase the pre-aggregation speed.  
 
 >[!CAUTION]
 > pelicun_2_brightway2 should be installed with the libraries indicated within the submodules folders. 
@@ -91,5 +93,5 @@ A first-tier contribution analysis procedure is further detailed in the suppleme
 
 # Citation
 
-Tanguay, X., Amor, B., 2026. (manuscript in preparation) Natural hazard risks in LCA for the built environment: a framework managing stochastic inputs in stochastic process-based LCA.
+Tanguay, X., Amor, B., 2026. Natural Hazard Risks in LCA for the Built Environment: Managing Stochastic Inputs in Stochastic Process-Based LCA. Environ. Sci. Technol. 20 October 2026; 60 (41): 29379–29391. https://doi.org/10.1021/acs.est.6c07128
 
